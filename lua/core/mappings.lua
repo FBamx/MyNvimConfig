@@ -25,6 +25,8 @@ M.general = {
 
     ["<A-b>"] = { "<cmd> lua require'dap'.toggle_breakpoint() <CR>", "break point" },
     ["<A-c>"] = { "<cmd> lua require'dap'.continue() <CR>", "continue" },
+    ["<A-u>"] = { "<cmd> lua require'dapui'.open() <CR>", "open debug ui" },
+    ["<A-p>"] = { "<cmd> lua require'dapui'.close() <CR>", "close debug ui" },
 
     -- switch between windows
     ["<C-h>"] = { "<C-w>h", "window left" },
@@ -56,6 +58,8 @@ M.general = {
       end,
       "toggle theme",
     },
+
+    ["<leader><leader>"] = { "<cmd> HopChar1 <CR>", "Hop"},
 
     -- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
     -- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/

@@ -214,6 +214,13 @@ local plugins = {
   ["rcarriga/nvim-dap-ui"] = {},
 
   ["preservim/tagbar"] = {},
+
+  ["phaazon/hop.nvim"] = {
+    branch = 'v2', -- optional but strongly recommended
+    config = function()
+      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+    end
+  },
 }
 
 -- Load all plugins
