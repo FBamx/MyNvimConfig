@@ -155,6 +155,7 @@ local plugins = {
     disable = true,
     config = function()
       require "plugins.configs.alpha"
+      require'alpha'.setup(require'alpha.themes.startify'.config)
     end,
   },
 
@@ -208,10 +209,17 @@ local plugins = {
   ["mfussenegger/nvim-dap"] = {
     config = function ()
       require("plugins.configs.dap")
+    end,
+    setup = function ()
+      require("core.utils").load_mappings "dap"
     end
   },
 
-  ["rcarriga/nvim-dap-ui"] = {},
+  ["rcarriga/nvim-dap-ui"] = {
+    config = function ()
+      require("plugins.configs.dapui")
+    end,
+  },
 
   ["preservim/tagbar"] = {},
 
@@ -220,6 +228,16 @@ local plugins = {
     config = function()
       require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
     end
+  },
+
+  ["theHamsta/nvim-dap-virtual-text"] = {
+    config = function()
+      local present, virtual_text = pcall(require, "nvim-dap-virtual-text")
+
+      if present then
+        virtual_text.setup()
+      end
+    end,
   },
 }
 

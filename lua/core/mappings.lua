@@ -23,11 +23,6 @@ M.general = {
   n = {
     ["<ESC>"] = { "<cmd> noh <CR>", "no highlight" },
 
-    ["<A-b>"] = { "<cmd> lua require'dap'.toggle_breakpoint() <CR>", "break point" },
-    ["<A-c>"] = { "<cmd> lua require'dap'.continue() <CR>", "continue" },
-    ["<A-u>"] = { "<cmd> lua require'dapui'.open() <CR>", "open debug ui" },
-    ["<A-p>"] = { "<cmd> lua require'dapui'.close() <CR>", "close debug ui" },
-
     -- switch between windows
     ["<C-h>"] = { "<C-w>h", "window left" },
     ["<C-l>"] = { "<C-w>l", "window right" },
@@ -37,7 +32,8 @@ M.general = {
     ["<A-j>"] = { "5j", "move down quickly"},
     ["<A-k>"] = { "5k", "move up quickly"},
 
-    ["<A-t>"] = { "<cmd> Tagbar <CR>", "open/close tagbar"},
+    ["<A-t>"] = { "<cmd> TagbarToggle <CR>", "open/close tagbar"},
+    ["<F6>"] = { "<cmd> lua require 'dapui'.close() <CR>", "open/close tagbar"},
 
     -- save
     ["<C-s>"] = { "<cmd> w <CR>", "save file" },
@@ -126,12 +122,41 @@ M.dap = {
   plugin = true,
 
   n = {
-    ["<A-b>"] = {
+    ["<F1>"] = {
       function ()
         require("dap").toggle_breakpoint()
       end,
       "break point",
     },
+
+    ["<F2>"] = {
+      function ()
+        require("dap").continue()
+      end,
+      "continue",
+    },
+
+    ["<F3>"] = {
+      function ()
+        require("dap").step_over()
+      end,
+      "step over",
+    },
+
+    ["<F4>"] = {
+      function ()
+        require("dap").step_into()
+      end,
+      "step into",
+    },
+
+    ["<F5>"] = {
+      function ()
+        require("dap").step_out()
+      end,
+      "step out",
+    },
+
   },
 }
 
