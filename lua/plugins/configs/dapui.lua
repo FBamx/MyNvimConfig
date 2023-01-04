@@ -60,7 +60,7 @@ require("dapui").setup({
       step_over = "",
       step_out = "",
       step_back = "",
-      run_last = "",
+      run_last = "",
       terminate = "",
     },
   },

@@ -23,7 +23,7 @@ local plugins = {
     end,
   },
 
-  ["NvChad/ui"] = {
+  ["FBamx/ui"] = {
     after = "base46",
     config = function()
       local present, nvchad_ui = pcall(require, "nvchad_ui")
@@ -235,9 +235,25 @@ local plugins = {
       local present, virtual_text = pcall(require, "nvim-dap-virtual-text")
 
       if present then
-        virtual_text.setup()
+        virtual_text.setup{}
       end
+    end
+  },
+
+  ["folke/noice.nvim"] = {
+    config = function()
+      require("plugins.configs.noice")
     end,
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
+  },
+
+  ["tamton-aquib/staline.nvim"] = {
+    config = function()
+      require("plugins.configs.staline")
+    end
   },
 }
 

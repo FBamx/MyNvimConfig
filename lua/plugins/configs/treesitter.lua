@@ -11,7 +11,11 @@ local options = {
     "lua",
     "go",
     "python",
-    "javascript"
+    "javascript",
+    "vim",
+    "regex",
+    "bash",
+    "markdown",
   },
 
   highlight = {
