@@ -14,7 +14,7 @@ vim.api.nvim_create_autocmd("Filetype", {
 })
 
 local options = {
-  ensure_installed = { "gopls", "pyright", "quick-lint-js" }, -- not an option from mason.nvim
+  ensure_installed = { "lua-language-server", "gopls", "pyright", "quick-lint-js" }, -- not an option from mason.nvim
 
   PATH = "skip",
 
