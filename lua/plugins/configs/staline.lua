@@ -16,18 +16,18 @@ require('staline').setup {
         mod_symbol      = "  ",
         lsp_client_symbol = " ",
         branch_symbol   = " ",
-        cool_symbol     = " ",       -- Change this to override default OS icon.
+        cool_symbol     = "",       -- Change this to override default OS icon.
         null_ls_symbol = "",          -- A symbol to indicate that a source is coming from null-ls
     },
     mode_colors = {
         -- n = "#2bbb4f",
-        -- i = "#986fec",
+        i = "#986fec",
         -- c = "#e27d60",
-        -- v = "#4799eb",   -- etc..
+        v = "#4799eb",   -- etc..
         n = "#cccccc",
-        i = "#ff6b6b",
+        -- i = "#ff6b6b",
         c = "#6b6bff",
-        v = "#f8ff60"
+        -- v = "#f8ff60"
     },
     mode_icons = {
         n = " ",
@@ -37,8 +37,8 @@ require('staline').setup {
     },
     sections = {
         left = { '- ', '-mode', 'left_sep_double', ' ', 'branch' },
-        mid  = { 'file_name' },
-        right = { 'cool_symbol','right_sep_double', '-line_column' },
+        mid  = { 'file_name', 'lsp'},
+        right = { 'cool_symbol','right_sep_double', '-lsp_name', '-line_column' },
     },
     special_table = {
         NvimTree = { 'NvimTree', ' ' },

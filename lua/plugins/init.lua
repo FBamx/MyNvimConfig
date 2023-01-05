@@ -255,6 +255,12 @@ local plugins = {
       require("plugins.configs.staline")
     end
   },
+
+  ["Mofiqul/dracula.nvim"] = {
+    config = function()
+      require("plugins.configs.dracula")
+    end
+  },
 }
 
 -- Load all plugins
